@@ -53,7 +53,7 @@ void ultrasonic(int type){
       distance_1= duration_1*0.034/2;
       // Prints the distance on the Serial Monitor
       Serial.print("Ultrasonic 1: ");
-      Serial.println(distance_1);
+      Serial.println(distance_1); 
      
   }
 
