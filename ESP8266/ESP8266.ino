@@ -22,6 +22,10 @@ const int trigPin_3 = D7;
 const int echoPin_3 = D8;  
 
 
+String uri = "http://192.168.254.105/trashbin/data.php";
+      
+
+
 // defines variables
 long duration_1;
 int distance_1;
@@ -69,7 +73,118 @@ void ultrasonic(int type){
 
   if(type == 1){ 
 
-      if (http.begin(client, "http://jigsaw.w3.org/HTTP/connection.html")) 
+      digitalWrite(trigPin_1, LOW);
+      delayMicroseconds(2);
+              
+      // Sets the trigPin on HIGH state for 10 micro seconds
+      digitalWrite(trigPin_1, HIGH);
+      delayMicroseconds(10);
+      digitalWrite(trigPin_1, LOW);
+              
+      // Reads the echoPin, returns the sound wave travel time in microseconds
+      duration_1 = pulseIn(echoPin_1, HIGH);
+              
+      // Calculating the distance
+      distance_1= duration_1*0.034/2;
+      // Prints the distance on the Serial Monitor
+      Serial.print("Ultrasonic 1: ");
+      Serial.println(distance_1);
+     
+      String data = String("?type=") + "1" + "&level="+ distance_1 + "&deviceID=" + 1;
+      
+      if (http.begin(uri + data)) 
+      {  // HTTP
+
+        int httpCode = http.GET();
+        
+        // httpCode will be negative on error
+        if (httpCode > 0) {
+          // HTTP header has been send and Server response header has been handled
+          Serial.printf("[HTTP] GET... code: %d\n", httpCode);
+  
+          // file found at server
+          if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY) {
+              String payload = http.getString();
+              Serial.println(payload);
+          }
+      } else {
+        Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
+      }
+
+      http.end();     
+      delay(4000);
+  }
+ }
+
+  if(type == 2){ 
+      
+       digitalWrite(trigPin_2, LOW);
+       delayMicroseconds(2);
+              
+       // Sets the trigPin on HIGH state for 10 micro seconds
+       digitalWrite(trigPin_2, HIGH);
+       delayMicroseconds(10);
+       digitalWrite(trigPin_2, LOW);
+              
+       // Reads the echoPin, returns the sound wave travel time in microseconds
+       duration_2 = pulseIn(echoPin_2, HIGH);
+              
+       // Calculating the distance
+       distance_2= duration_2*0.034/2;
+       // Prints the distance on the Serial Monitor
+       Serial.print("Ultrasonic 2: ");
+       Serial.println(distance_2);
+              
+       String data = String("?type=") + "2" + "&level="+ distance_2 + "&deviceID=" + 1;
+      
+      if (http.begin(uri + data)) 
+      {  // HTTP
+
+        int httpCode = http.GET();
+
+        // httpCode will be negative on error
+        if (httpCode > 0) {
+          // HTTP header has been send and Server response header has been handled
+          Serial.printf("[HTTP] GET... code: %d\n", httpCode);
+  
+          // file found at server
+          if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY) {
+            String payload = http.getString();
+              Serial.println(payload);
+             
+          }
+      } else {
+        Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
+      }
+
+      http.end();     
+      delay(4000);
+   }
+  }
+
+  if(type == 3){
+
+
+     digitalWrite(trigPin_3, LOW);
+     delayMicroseconds(2);
+              
+     // Sets the trigPin on HIGH state for 10 micro seconds
+     digitalWrite(trigPin_3, HIGH);
+     delayMicroseconds(10);
+     digitalWrite(trigPin_3, LOW);
+              
+     // Reads the echoPin, returns the sound wave travel time in microseconds
+      duration_3 = pulseIn(echoPin_3, HIGH);
+              
+      // Calculating the distance
+      distance_3= duration_3*0.034/2;
+      // Prints the distance on the Serial Monitor
+      Serial.print("Ultrasonic 3: ");
+      Serial.println(distance_3);
+      
+      String data = String("?type=") + "3" + "&level="+ distance_3 + "&deviceID=" + 1;
+      
+      if (http.begin(uri + data)) 
       {  // HTTP
 
         int httpCode = http.GET();
@@ -83,114 +198,13 @@ void ultrasonic(int type){
           if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY) {
             String payload = http.getString();
             Serial.println(payload);
-              digitalWrite(trigPin_1, LOW);
-              delayMicroseconds(2);
-              
-              // Sets the trigPin on HIGH state for 10 micro seconds
-              digitalWrite(trigPin_1, HIGH);
-              delayMicroseconds(10);
-              digitalWrite(trigPin_1, LOW);
-              
-              // Reads the echoPin, returns the sound wave travel time in microseconds
-              duration_1 = pulseIn(echoPin_1, HIGH);
-              
-              // Calculating the distance
-              distance_1= duration_1*0.034/2;
-              // Prints the distance on the Serial Monitor
-              Serial.print("Ultrasonic 1: ");
-              Serial.println(distance_1);
-              
           }
       } else {
         Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
       }
 
       http.end();     
-      delay(2000);
-  }
- }
-
-  if(type == 2){ 
-     if (http.begin(client, "http://jigsaw.w3.org/HTTP/connection.html")) 
-     {  // HTTP
-
-        int httpCode = http.GET();
-
-        // httpCode will be negative on error
-        if (httpCode > 0) {
-          // HTTP header has been send and Server response header has been handled
-          Serial.printf("[HTTP] GET... code: %d\n", httpCode);
-  
-          // file found at server
-          if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY) {
-            String payload = http.getString();
-            Serial.println(payload);
-              digitalWrite(trigPin_2, LOW);
-              delayMicroseconds(2);
-              
-              // Sets the trigPin on HIGH state for 10 micro seconds
-              digitalWrite(trigPin_2, HIGH);
-              delayMicroseconds(10);
-              digitalWrite(trigPin_2, LOW);
-              
-              // Reads the echoPin, returns the sound wave travel time in microseconds
-              duration_2 = pulseIn(echoPin_2, HIGH);
-              
-              // Calculating the distance
-              distance_2= duration_2*0.034/2;
-              // Prints the distance on the Serial Monitor
-              Serial.print("Ultrasonic 2: ");
-              Serial.println(distance_2);
-              
-          }
-      } else {
-        Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
-      }
-
-      http.end();     
-      delay(2000);
-   }
-  }
-
-  if(type == 3){ 
-   if (http.begin(client, "http://jigsaw.w3.org/HTTP/connection.html")) 
-     {  // HTTP
-
-        int httpCode = http.GET();
-
-        // httpCode will be negative on error
-        if (httpCode > 0) {
-          // HTTP header has been send and Server response header has been handled
-          Serial.printf("[HTTP] GET... code: %d\n", httpCode);
-  
-          // file found at server
-          if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY) {
-            String payload = http.getString();
-            Serial.println(payload);
-              digitalWrite(trigPin_3, LOW);
-              delayMicroseconds(2);
-              
-              // Sets the trigPin on HIGH state for 10 micro seconds
-              digitalWrite(trigPin_3, HIGH);
-              delayMicroseconds(10);
-              digitalWrite(trigPin_3, LOW);
-              
-              // Reads the echoPin, returns the sound wave travel time in microseconds
-              duration_3 = pulseIn(echoPin_3, HIGH);
-              
-              // Calculating the distance
-              distance_3= duration_3*0.034/2;
-              // Prints the distance on the Serial Monitor
-              Serial.print("Ultrasonic 3: ");
-              Serial.println(distance_3);
-              
-          }
-      } else {
-        Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
-      }
-
-      http.end();     
-      delay(2000);
+      delay(4000);
    }
   }
 
