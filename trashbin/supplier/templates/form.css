@@ -1,0 +1,127 @@
+body {
+			margin: 0;
+			padding: 0;
+			background: #e9eaee;
+			font-family: 'Scada', sans-serif;
+			}
+			#itemtitle {
+				width: 100%;
+			}
+			#itemtitle li {
+				float: left;
+				width: 200px;
+				padding: 0;
+				margin: 0;
+				background: #34A853;
+			}
+			#product h4 {
+				line-height: 25px;
+				padding: 0;
+				font-size: 12px;
+				font-weight: normal;
+				margin: 0;
+			}
+			#product h3 {
+				line-height: 25px;
+				padding: 0;
+				margin: 0;
+			}
+			#product h5 {
+				line-height: 25px;
+				padding: 0;
+				font-size: 12px;
+				font-weight: normal;
+				margin: 0;
+			}
+			h2 {
+				line-height: 50px;
+				padding: 0;
+				padding-top: 7px;
+				padding-bottom: 7px;
+				margin: 0;
+				background-color: #8b9dc3;
+				color: #fff;
+				text-align: center;
+			}
+			input[type=text] {
+				width: 100%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				box-sizing: border-box;
+				border: 3px solid #ccc;
+				-webkit-transition: 0.5s;
+				transition: 0.5s;
+				outline: none;
+				border-radius: 100px;
+			}
+			input[type=number] {
+				width: 100%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				box-sizing: border-box;
+				border: 3px solid #ccc;
+				-webkit-transition: 0.5s;
+				transition: 0.5s;
+				outline: none;
+				border-radius: 100px;
+			}
+			input[type=text]:focus {
+				background-color: #8b9dc3;
+			}
+			input[type=number]:focus {
+				background-color: #8b9dc3;
+			}
+			input[type=submit] {
+				width: 100%;
+				background-color: #3B5998;
+				color: white;
+				padding: 14px 20px;
+				margin: 8px 0;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+			input[type=submit]:hover {
+				background-color: #8b9dc3;
+			}
+			input[type=button] {
+				width: 100%;
+				background-color: #3B5998;
+				color: white;
+				padding: 14px 20px;
+				margin: 8px 0;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+			input[type=button]:hover {
+				background-color: #8b9dc3;
+			}
+			input[type=password] {
+				width: 100%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				box-sizing: border-box;
+				border: 3px solid #ccc;
+				-webkit-transition: 0.5s;
+				transition: 0.5s;
+				outline: none;
+				border-radius: 100px;
+			}
+			input[type=password]:focus {
+				background-color: #8b9dc3;
+			}
+			textarea {
+				width: 100%;
+				padding: 12px 20px;
+				margin: 8px 0;
+				box-sizing: border-box;
+				border: 3px solid #ccc;
+				-webkit-transition: 0.5s;
+				transition: 0.5s;
+				outline: none;
+				border-radius: 20px;
+			}
+			textarea:focus {
+				background-color: lightblue;
+			}
