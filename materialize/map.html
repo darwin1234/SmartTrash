@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>Mapa</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+        background-color: #f4f4f4;
+    }
+
+    .side-nav {
+        width: 300px;
+    }
+
+    #gilid a {
+        width: 250px;
+    }
+
+    nav {
+        box-shadow: none;
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="nav-wrapper transparent container">
+            <a href="#" class="brand-logo hide-on-med-and-down" id="dblink">Map</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i
+                    class="material-icons grey-text bold">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#!"><i class="material-icons light-green-text">notifications</i></a></li>
+                <li><a href="logout.html" class="btn large light-green white-text">Logout</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                    <div id="titleside">
+                            <h5 class="center-align light-green-text">SmartRobinS</h5>
+                          </div>
+
+                <br>
+                <div id="gilid">
+                    <li><a href="dashboard.html"><i class="material-icons white-text">dashboard</i>Dashboard</a></li>
+                    <li><a href="link2.html"><i class="material-icons">delete</i>Trashbin</a></li>
+                    <li><a href="map.html" class="waves-effect waves-light btn light-green"><i
+                                class="material-icons">location_on</i>Map</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <aside>
+        <ul id="slide-out" class="side-nav fixed">
+            <div id="title">
+                <h5 class="center-align">SmartRobinS</h5>
+            </div>
+
+            <br>
+            <div id="gilid">
+                <li><a href="dashboard.html"><i class="material-icons light-green-text">dashboard</i>Dashboard</a></li>
+                <li><a href="link2.html"><i class="material-icons light-green-text">delete</i>Trashbin</a></li>
+                <li><a href="map.html" class="waves-effect waves-light btn light-green"><i
+                            class="material-icons white-text">location_on</i>Map</a></li>
+            </div>
+        </ul>
+    </aside>
+
+    <div class="container">
+            <div class="row">
+                    <div class="col s12 " id="dbtitle">
+                      <h4 class="hide-on-large-only">Map</h4>
+                    </div>
+                  </div>
+        <div class="row">
+            <div class="col s12 m5 l12">
+                <div class="card-panel white" id="carddbmapa">
+                    <span class="light-green-text">mapa dito
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".button-collapse").sideNav();
+        });
+    </script>
+</body>
+
+</html>

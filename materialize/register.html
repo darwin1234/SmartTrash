@@ -1,0 +1,88 @@
+<html>
+   <head>
+      <title>Register</title>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="style.css">   
+   </head>
+   
+   <body>   
+     
+    <header>
+
+    </header>
+     <section class="container section " id="contact">
+         <div class="row">
+             
+            <div class="col s12 l5" id="fix">
+                <h2 class="white-text center-align " id="w">W</h2>
+                <img src="image/register.jpg" alt="" class="responsive-img ">
+            </div>
+                <div class="col s12 m5" id="c4">
+                    <div class="card-panel z-depth-1"> 
+                        <form method="post" onsubmit="return doInsert(this);">
+                           
+                            <div class="input-field">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input type="text" id="name" name="name">
+                                <label for="name">Name</label>
+                            </div>
+                            <div class="input-field ">
+                                <i class="material-icons prefix">email</i>
+                                <input type="text" id="username" name="username" class="deep-purple-text">
+                                <label for="username">Username</label>
+                            </div>
+                            <div class="input-field ">
+                                <i class="material-icons prefix">lock</i>
+                                <input type="password" id="password" name="password">
+                                <label for="password">Password</label>
+                            </div>
+                        
+                            <div class="input-field center">
+                                <button class="btn " onclick="myFunction()" id="button" name="register">Register</button> 
+                               
+                            </div>
+                            <div class="input-field">
+                                <p class="center-align">Already have an account? <a href="Login.html"><span >Login</span> </a></p>
+                            </div> 
+                        </form>
+                </div>
+            </div>
+         </div>
+     </section>
+     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+     
+     <script type="text/javascript">
+     function myFunction() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Returns successful data submission message when the entered information is stored in database.
+        var dataString = 'name1=' + name + '&email1=' + email + '&password1=' + password;
+        if (name == '' || email == '' || password == '' ) {
+        alert("Please Fill All Fields");
+        } else {
+        // AJAX code to submit form.
+        $.ajax({
+        type: "POST",
+        url: "php/register.php",
+        data: dataString,
+        cache: false,
+        success: function(html) {
+        alert(html);
+        }
+        });
+        }
+        return false;
+        }
+		</script>
+   </body>   
+</html>

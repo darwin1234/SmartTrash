@@ -1,0 +1,101 @@
+<html>
+   <head>
+      <title>Login</title>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="style.css">   
+      
+		<script>
+            var test = localStorage.getItem("userdata");
+                test = JSON.parse(test);
+                if (test != null){
+                window.location.href = 'dashboard.html';
+                }
+            </script>
+   </head>
+   
+   <body>  
+
+     <section class="container section " id="contact">
+         <div class="row">
+            <div class="col s12 l5">
+                <h2 class="white-text center-align " id="w">W</h2>
+                <img src="image/login.jpg" alt="" class="responsive-img">
+            </div>
+        
+            <div class="col s12 m5" id="c2">
+              
+                <div class="card-panel z-depth-1"> 
+                <form id="login" method="post">
+                    <div class="input-field center">
+                        <i class="material-icons prefix">email</i>
+                        <input type="text" id="username" class="deep-purple-text">
+                        <label for="text">Username</label>
+                    </div>
+                    <div class="input-field center">
+                        <i class="material-icons prefix">lock</i>
+                        <input type="password" id="password">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="input-field center">
+                        <button class="btn light-green" id="button" name="login">Login</button>
+                    </div>
+                    <div class="input-field">
+                        <p class="center-align">Don't have an account? <a href="register.html"><span class="purple-text">Sign up</span> </a></p>
+                    </div>
+                </form>
+            </div>
+         </div>
+     </section>
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript">
+		var BaseURL = "http://127.0.0.1/";
+		var login = document.getElementById("login");
+		var xhttp = new XMLHttpRequest();
+		
+		login.addEventListener("submit", function(e)
+		{
+			var username = document.getElementById("username");
+			var password = document.getElementById("password");
+			xhttp.onreadystatechange = function() 
+			{
+				if (this.readyState == 4 && this.status == 200) 
+				{
+				
+					if(this.responseText == '0'
+					 || this.response == 'null' 
+					 || this.responseText == 0 )
+					 {
+					  alert("error!")
+					 }
+					else
+					{
+							window.location.href = 'dashboard.html';
+							localStorage.setItem("userdata",this.responseText);
+					}
+
+				}else{
+					
+					console.log("Server Error!");
+				
+				}
+				info();	
+			};
+			
+			xhttp.open("POST", BaseURL + "materialize/php/login.php", true);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");		 
+			xhttp.send("username="+ username.value + "&password="+ password.value);
+			e.preventDefault();
+				
+		});
+
+		</script>
+   </body>   
+</html>

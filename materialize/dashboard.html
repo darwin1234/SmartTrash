@@ -1,0 +1,104 @@
+<html>
+
+<head>
+  <title>Dashboard</title>
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- Compiled and minified CSS -->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: #f4f4f4;
+    
+  }
+
+  .side-nav {
+    width: 300px;
+  }
+
+  #gilid a {
+    width: 250px;
+  }
+
+  nav {
+    box-shadow: none;
+  }
+</style>
+
+<body>
+  <header>
+    <nav class="nav-wrapper transparent container">
+        <a href="#" class="brand-logo hide-on-med-and-down" id="dblink">Dashboard</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i
+          class="material-icons grey-text bold">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+      
+        <li><a href="#!"><i class="material-icons light-green-text">notifications</i></a></li>
+        <li><a href="logout.html" class="btn large light-green white-text">Logout</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <div id="titleside">
+          <h5 class="center-align light-green-text">SmartRobinS</h5>
+        </div>
+        <br>
+        <div id="gilid">
+          <li><a href="dashboard.html" class="waves-effect waves-light btn light-green"><i
+                class="material-icons white-text">dashboard</i>Dashboard</a></li>
+          <li><a href="link2.html"><i class="material-icons">delete</i>Trashbin</a></li>
+          <li><a href="map.html"><i class="material-icons">location_on</i>Map</a></li>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <aside>
+    <ul id="slide-out" class="side-nav fixed">
+      <div id="title">
+        <h5 class="center-align">SmartRobinS</h5>
+      </div>
+
+      <br>
+      <div id="gilid">
+        <li><a href="dashboard.html" class="waves-effect waves-light btn light-green"><i
+              class="material-icons white-text">dashboard</i>Dashboard</a></li>
+        <li><a href="link2.html"><i class="material-icons light-green-text">delete</i>Trashbin</a></li>
+        <li><a href="map.html"><i class="material-icons light-green-text">location_on</i>Map</a></li>
+      </div>
+    </ul>
+  </aside>
+
+  <div class="container">
+    <div class="row">
+      <div class="col s12 " id="dbtitle">
+        <h4 class="hide-on-large-only">Dashboard</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m5 l12">
+        <div class="card-panel white" id="carddb">
+          <span class="light-green-text">I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively. I am similar to what is called a panel
+            in other frameworks.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".button-collapse").sideNav();
+    });
+  </script>
+</body>
+
+</html>

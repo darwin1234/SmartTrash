@@ -1,0 +1,174 @@
+@import 'https://fonts.googleapis.com/css?family=Poppins';
+
+
+body {
+    font-family: 'Poppins';
+
+
+}
+
+p {
+    font-family: 'poppins';
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+.card-panel {
+    border-radius: 20px;
+}
+
+tr i {
+    padding-top: 5px;
+}
+
+#dbtitle{
+    margin-left: 8em;
+    font-weight: bold;
+}
+
+#card1 {
+    position: relative;
+    top: 4em;
+    left: 3.5em;
+    width: 80%;
+    border-radius: 50px;
+}
+
+#carddb {
+    margin-left: 8em;
+    height: 50%;
+}
+
+#carddbmapa {
+    margin-left: 8em;
+    height: 50%;
+    width: 100%;
+}
+
+.btn {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.collection {
+    padding: 0;
+}
+
+#title h5 {
+    padding-top: 10px;
+}
+
+#gilid li {
+    padding-top: 5px;
+}
+
+#logo {
+    margin-left: 1em;
+}
+
+#db1 {
+    height: 50%;
+}
+
+#db1 p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 45px;
+
+}
+#dblink{
+    padding-left: 5em;
+    padding-top: 5px;
+    color: black;
+    font-size: 25px;
+}
+
+#menu1 {
+    height: 50%;
+}
+
+#picture {
+    margin-top: .5em;
+    margin-right: 1em;
+    width: 50px;
+    height: 50px;
+}
+
+i {
+    z-index: 3;
+}
+
+@media screen and (max-width: 600px) {
+    #db1 {
+        width: 100%;
+    }
+
+    .row {
+        padding-top: 0;
+    }
+
+    #card1 {
+        position: relative;
+        top: 4em;
+        left: 2.5em;
+        width: 80%;
+        border-radius: 50px;
+    }
+
+    #w {
+        display: none;
+    }
+
+    #smart {
+        font-size: 30px;
+    }
+
+    #wall {
+        width: 100px;
+        height: 100px;
+        align-self: center;
+    }
+
+    #c2 {
+        position: absolute;
+        top: 18em;
+        left: 0;
+    }
+
+    h3 {
+        color: lightgreen;
+    }
+
+
+    #c3{
+        padding-top: -10px;
+    }
+
+    #c4 {
+        position: absolute;
+        top: 18em;
+        left: 0;
+    }
+
+    #carddb {
+        margin: 0;
+        height: 50%;
+    }
+    #carddbmapa {
+        margin: 0;
+        height: 50%;
+        width: 100%;
+    }
+
+    #dbtitle{
+        margin: 0;
+        font-weight: bold;
+    }
+    #titleside{
+        margin-top: 3em;
+    }
+
+}
+
+/*changing colors*/

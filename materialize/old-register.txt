@@ -1,0 +1,18 @@
+<?php
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
+$connection = mysqli_connect("localhost", "root", "", "trashbin");
+
+if (isset($_POST["submit"]))
+{
+    $name =  strip_tags(@$_POST['name']);
+    $username =  strip_tags(@$_POST['username']);
+    $password =  strip_tags(md5(@$_POST['password']));
+    
+	
+    $sql = "INSERT INTO 'users'('username', 'password', 'nagan') VALUES ('$username', '$password', '$name')";
+    mysqli_query($connection, $sql);
+
+    echo "Record has been inserted successfully.";
+    exit();
+}
